@@ -1,0 +1,25 @@
+<ul class="records">
+  <li *ngFor="let record of records">
+    <button [class.selected]="record === selectedRecord" type="button" (click)="onSelect(record)">
+      <span class="badge">{{record.id}}</span>
+      <span class="name">{{record.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedRecord">
+  <h2>Details</h2>
+  <div>id: {{selectedRecord.id}}</div>
+  <div>
+    <label for="record-name">name: </label>
+    <input id="record-name" [(ngModel)]="selectedRecord.name" placeholder="name">
+  </div>
+  <div class="age">
+    <label for="record-age">age: </label>
+    <input id="record-age" [(ngModel)]="selectedRecord.age" placeholder="age">
+  </div>
+  <div class="gender">
+    <label for="record-gender">gender: </label>
+    <input id="record-gender" [(ngModel)]="selectedRecord.gender" placeholder="gender">
+  </div>
+</div>
