@@ -12,30 +12,25 @@
 </ul>
 
 <div *ngIf="selectedRecord">
-  <h2>Details</h2>
-  <div>id: {{selectedRecord.id}}</div>
+  <h3>Selected record detail:</h3>
+  <div>Id of the record: {{selectedRecord.id}}</div>
 
-  <ul>
-    <li>
-        <div>
+  
+        <div class="recordName">
             <label for="record-name">Name: </label>
             <input id="record-name" [(ngModel)]="selectedRecord.name" placeholder="name">
         </div>
-    </li>
-
-    <li>
-        <div class="age">
+   
+        <div class="recordAge">
             <label for="record-age">Age: </label>
             <input id="record-age" [(ngModel)]="selectedRecord.age" placeholder="age">
         </div>
-    </li>
-
-    <li>
-        <div class="gender">
+   
+        <div class="recordGender">
             <label for="record-gender">Gender: </label>
             <input id="record-gender" [(ngModel)]="selectedRecord.gender" placeholder="gender">
-          </div>
-    </li>
-    <button type="button" (click)="save()">save</button>
-  </ul>
+        </div>
+    
+    <button type="button" class="save" (click)="save()">save</button>
+  
 </div>
