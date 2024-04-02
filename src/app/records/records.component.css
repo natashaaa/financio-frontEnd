@@ -1,4 +1,4 @@
-/* HeroesComponent's private CSS styles */
+
 .records {
     margin: 0 0 2em 0;
     list-style-type: none;
@@ -10,7 +10,7 @@
     display: flex;
   }
   
-  .records button {
+  .records a {
     flex: 1;
     cursor: pointer;
     position: relative;
@@ -24,28 +24,28 @@
     height: 1.8em;
   }
   
-  .records button:hover {
+  .records a:hover {
     color: #2c3a41;
     background-color: #e6e6e6;
     left: .1em;
   }
   
-  .records button:active {
+  .records a:active {
     background-color: #525252;
     color: #fafafa;
   }
   
-  .records button.selected {
+  .records a.selected {
     background-color: black;
     color: white;
   }
   
-  .records button.selected:hover {
+  .records a.selected:hover {
     background-color: #505050;
     color: white;
   }
   
-  .records button.selected:active {
+  .records a.selected:active {
     background-color: black;
     color: white;
   }
@@ -62,16 +62,29 @@
   }
   
   .records .name {
-    align-self: center;
+    text-align: center;
   }
 
-  .age{
-    align-self: center;
-    margin-top: 3px;
-    margin-bottom: 3px;
+  .records .age{
+    text-align: center;
   }
-  .gender{
-    align-self: center;
-    margin-top: 3px;
-    margin-bottom: 3px;
+  .records .gender{
+    text-align: center;
   }
+
+  button.delete {
+    position: absolute;
+    left: 230px;
+    top: 3px;
+    background-color: rgb(151, 146, 146);
+    color:  #525252;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 1px 10px 3px 10px;
+  }
+
+  button.delete:hover {
+    background-color: #525252;
+    color: white;
+  }
+  
