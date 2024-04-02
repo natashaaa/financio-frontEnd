@@ -31,9 +31,20 @@ export class RecordsComponent {
 
   }
 
+  save(): void {
+    if (this.selectedRecord) {
+      this.recordService.updateRecord(this.selectedRecord)
+        .subscribe(updatedRecord => {
+          const index = this.records.findIndex(r => r.id === updatedRecord.id);
+          if (index !== -1) {
+            this.records[index] = updatedRecord;
+          }
+        });
+    }
+  }
+
   delete(record: Record): void {
     this.records = this.records.filter(r => r !== record);
-    console.log('id', record.id);
     this.recordService.deleteRecord(record.id).subscribe(
       () => console.log('Record deleted successfully'),
       (error: HttpErrorResponse) => console.error('Error deleting record:', error)

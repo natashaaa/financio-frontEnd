@@ -24,13 +24,13 @@ export class RecordService {
         return this.http.get<Record>(url);
     }
 
-    updateRecord(id: number): Observable<any> {
-        const url = `${this.baseUrl}/update/record/${id}`;
-        return this.http.put(url, this.httpOptions);
+    updateRecord(record: Record): Observable<any> {
+        const url = `${this.baseUrl}/update/record/${record.id}`;
+        return this.http.put(url, record, this.httpOptions);
     }
 
-        deleteRecord(id: number): Observable<Record> {
-            const url = `${this.baseUrl}/index/record/${id}`;
-            return this.http.delete<Record>(url, this.httpOptions);
-        }
+    deleteRecord(id: number): Observable<Record> {
+        const url = `${this.baseUrl}/index/record/${id}`;
+        return this.http.delete<Record>(url, this.httpOptions);
+    }
 }
